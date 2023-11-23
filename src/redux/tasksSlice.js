@@ -1,6 +1,4 @@
-
 import { createSlice } from '@reduxjs/toolkit';
-
 
 export const tasksSlice = createSlice({
     name: 'tasks',
@@ -16,7 +14,6 @@ export const tasksSlice = createSlice({
       },
       deleteTask: (state, action) => {
         const { id } = action.payload;
-        console.log("en eleminar ")
         return state.filter((item) => item.id !== id);
       
       },
@@ -28,11 +25,12 @@ export const tasksSlice = createSlice({
           todo.completed = !todo.completed;
          
         }
-      },
-
-      
+      }, 
     },
   });
+
+
+  
   export const { toggleTodo } = tasksSlice.actions;
   export const addTask = tasksSlice.actions.addTask;
   export const deleteTask = tasksSlice.actions.deleteTask;

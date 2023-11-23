@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { AddTodo } from "./components/AddTodo";
 import { TodoList } from "./components/TodoList";
 import { tasksSlice } from "./redux/tasksSlice";
+import {CountTask} from './components/CountTask';;
 
 const reducer = combineReducers({
   tasks: tasksSlice.reducer,
@@ -14,6 +15,8 @@ export const App = () => {
     <Provider store={store}>
       <AddTodo />
       <TodoList />
+      <CountTask />
     </Provider>
+
   );
 };
