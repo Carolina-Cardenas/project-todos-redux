@@ -72,7 +72,7 @@ body {
 }
 
 .task-item{
-  margin: 15px 0px;
+  margin: 15px 0px ;
   display: flex;
   justify-content: space-between;
   padding : 8px 40px;
