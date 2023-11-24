@@ -90,7 +90,7 @@ body {
 .remove-task-button:hover{
   cursor: pointer;
 }
-.task-text.completed-text {
+
+.task-input.completed-input {
   text-decoration: line-through;
 }
-
