@@ -31,12 +31,12 @@ export const TodoItem = ({ id, text, completed}) => {
  
   return (
     <li className={`todo-item ${completed ? "completed" : ""}`}>
-      <input type="checkbox" checked={completed} onChange={handleToggleTodo} />
+      <input type="checkbox" className="checkbox" checked={completed} onChange={handleToggleTodo} />
       <input type="text" value={taskText} onChange={handleChange}
         className={`task-input ${completed ? "completed-input" : ""}`}
       />
-      <button onClick={removeTask}>Delete</button>
-      <span>{completed ? 'Completed' : 'Incomplete'}</span>
+      <button onClick={removeTask} className="delete-button">Delete</button>
+      <span className="status">{completed ? 'Completed' : 'Incomplete'}</span>
     </li>
   );
 };

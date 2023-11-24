@@ -29,6 +29,7 @@ export const AddTodo = () => {
 
 	return (
 		<div className="add-todo">
+			 <input type="checkbox" className="checkbox-invisible" />
 			<input
 				type="text"
 				className="task-input"
@@ -44,4 +45,3 @@ export const AddTodo = () => {
 	);
 };
 
-export default AddTodo;
