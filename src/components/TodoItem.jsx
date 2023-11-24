@@ -36,6 +36,7 @@ export const TodoItem = ({ id, text, completed}) => {
         className={`task-input ${completed ? "completed-input" : ""}`}
       />
       <button onClick={removeTask}>Delete</button>
+      <span>{completed ? 'Completed' : 'Incomplete'}</span>
     </li>
   );
 };

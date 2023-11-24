@@ -6,6 +6,7 @@ export  const CountTask = () => {
 
   const totalTasks = tasks.length;
   const incompleteTasks = tasks.filter((task) => !task.completed).length;
+  const completeTasks = tasks.filter((task) => task.completed).length;
 
 //   return (
 //     <div>
@@ -19,8 +20,10 @@ export  const CountTask = () => {
 return (
     <div className='container-boxes'>
        
-      <p>Total Tasks: {tasks.length}</p>
-      <div>
+      <p>You have total {totalTasks} task.</p>
+      <p>You have a {incompleteTasks} incompleted task.</p>
+      <p>You have a {completeTasks} completed task.</p>
+      {/* <div>
         <p>Tasks:</p>
         
         <ul>
@@ -33,7 +36,7 @@ return (
       
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }
