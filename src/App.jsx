@@ -14,6 +14,7 @@ export const App = () => {
   return (
     <Provider store={store}>
        <div className="body">
+        <h1>My To Do list</h1>
       <AddTodo />
       <TodoList />
       <CountTask /> 
