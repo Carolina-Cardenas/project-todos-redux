@@ -3,12 +3,20 @@ import React, { useState } from 'react';
 import { deleteTask, toggleTodo } from "../redux/tasksSlice";
 import "./../index.css";
 
-export const TodoItem = ({ id, text, completed,handleToggleTodo, handleDeleteTask}) => {
+export const TodoItem = ({ id, text, completed}) => {
   const dispatch = useDispatch();
   
   const removeTask=()=>{
 		dispatch(
 			deleteTask({
+				id: id
+			})
+		)
+	}
+
+  const handleToggleTodo=()=>{
+		dispatch(
+			toggleTodo({
 				id: id
 			})
 		)
