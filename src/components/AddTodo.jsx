@@ -36,10 +36,10 @@ export const AddTodo = () => {
 				value={value}
 				onChange={(event) => setValue(event.target.value)}
 			></input>
-
 			<button className="task-button" onClick={onSubmit}>
 				Save
 			</button>
+			<div></div>
 		</div>
 	);
 };

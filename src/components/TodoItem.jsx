@@ -1,33 +1,37 @@
+import { useDispatch } from "react-redux";
+import React, { useState } from 'react';
+import { deleteTask, toggleTodo } from "../redux/tasksSlice";
+import "./../index.css";
 
-import { useDispatch } from 'react-redux';
-import { deleteTask,toggleTodo } from '../redux/tasksSlice';
-import './../index.css';
-export const  TodoItem =({ id, text, completed })=> {
-const dispatch = useDispatch();
+export const TodoItem = ({ id, text, completed,handleToggleTodo, handleDeleteTask}) => {
+  const dispatch = useDispatch();
+  
+  const removeTask=()=>{
+		dispatch(
+			deleteTask({
+				id: id
+			})
+		)
+	}
 
-const handleToggleTodo = () => {
+  const [taskText, setTaskText] = useState(text ? text : "");
+  
+    const handleChange = (e) => {
+      setTaskText(e.target.value);
+    };
+  const completedClass = completed ? "completed" : "";
  
-  dispatch(toggleTodo({id}));
+  return (
+    <li className={`todo-item ${completed ? "completed" : ""}`}>
+      <input type="checkbox" checked={completed} onChange={handleToggleTodo} />
 
-};
-
-const handleDeleteTask = () => {
-
-    dispatch(deleteTask({id}));
-  };
-
-  const completedClass = completed ? 'completed' : '';
-    return (
-        <li className={`todo-item ${completed ? 'completed' : ''}`}>
-        <input
-          type="checkbox"
-          checked={completed}
-          onChange={handleToggleTodo}
-        />
-        <span className={`task-text ${completed ? 'completed-text' : ''}`}>
+      {/* <span className={`task-text ${completed ? "completed-text" : ""}`}>
         {text}
-      </span>
-        <button onClick={handleDeleteTask}>Delete</button>
-      </li>
-    );
-  };
+      </span> */}
+      <input type="text" value={taskText} onChange={handleChange}
+        className={`task-input ${completed ? "completed-input" : ""}`}
+      />
+      <button onClick={removeTask}>Delete</button>
+    </li>
+  );
+};
