@@ -1,5 +1,5 @@
-export const ADD_TODO = 'ADD_TODO';
-export const TOGGLE_TODO = 'TOGGLE_TODO';
+export const ADD_TODO = "ADD_TODO";
+export const TOGGLE_TODO = "TOGGLE_TODO";
 
 export function addTodo(todo) {
   return {
@@ -15,9 +15,8 @@ export function toggleTodo(id) {
   };
 }
 
-
 export const deleteTask = (taskId) => ({
-  type: 'DELETE_TASK',
+  type: "DELETE_TASK",
   payload: {
     taskId,
   },
